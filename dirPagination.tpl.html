@@ -1,0 +1,13 @@
+<ul class="pagination" ng-if="1 < pages.length">
+    
+    <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == 1 }">
+        <img src="../mediathek/images/arrow_left.png" ng-click="setCurrent(pagination.current - 1)">
+    </li>
+    
+
+    <li ng-if="directionLinks" ng-class="{ disabled : pagination.current == pagination.last }">
+        <img src="../mediathek/images/arrow_right.png" ng-click="setCurrent(pagination.current + 1)">
+    </li>
+    
+</ul>
+<div class="range-label">Video {{ range.lower }} - {{ range.upper }} von {{ range.total }}</div>
