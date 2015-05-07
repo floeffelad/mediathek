@@ -17,11 +17,11 @@
 </head>
 <body>
  <div class="part-a"> 
-  
+  <div class="container">
     <div class="ytPlayer">
       <div id="player"></div>
     </div>
-     
+    </div> 
   </div>
 
   <div class="part-b">
@@ -43,29 +43,31 @@
                   <button id="searchbtn" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                 </div>
             </div>
-          </form>
-          
-          
+          </form>   
         </div>
+          
+        
       </div> 
-      <section class="videos">
-        <div class="col-xs-6 col-sm-4" dir-paginate="video in videoList | filter:nameText | orderBy:'-snippet.publishedAt' | itemsPerPage: pageSize" current-page="currentPage" pagination-id="All">
+      <div class="col-xs-2 col-sm-2">
+        <dir-pagination-controls boundary-links="false" template-url="dirPaginationLeft.tpl.html" pagination-id="All"></dir-pagination-controls>
+      </div>
+      <section class="col-xs-8 col-sm-8" class="videos">
+        <div class="col-xs-6 col-md-4" dir-paginate="video in videoList | filter:nameText | itemsPerPage: pageSize" current-page="currentPage" pagination-id="All">
           <a href ng-click="launch(video.id)">
             <div class="thumbnail">
-              <div class="image-wrapper">
-              <img ng-src="{{video.snippet.thumbnails.medium.url}}"></img> 
+              <img ng-src="{{video.snippet.thumbnails.medium.url}}"></img>
+              <div class="caption">
+                <div class="title"><h6> {{video.snippet.title}} </h6></div>
+                <div class="desc">{{video.snippet.description}}</div>
               </div>
-              <h2> <span>{{video.snippet.title}} </span></h2>
-              <p>{{video.snippet.description}}</p>
             </div>
           </a>  
         </div>
       </section> 
+      <div class="col-xs-2 col-sm-2">
+        <dir-pagination-controls boundary-links="false" template-url="dirPaginationRight.tpl.html" pagination-id="All"></dir-pagination-controls>
 
-      <div ng-controller="OtherController" id="other-controller">
-        <div class="text-center">
-          <dir-pagination-controls boundary-links="false" on-page-change="pageChangeHandler($event)" template-url="dirPagination.tpl.html" pagination-id="All"></dir-pagination-controls>
-        </div>
+  
       </div>
     </div>
 
@@ -78,56 +80,27 @@
         <div class="col-xs-6 col-sm-4">
           
         </div>
-        <div class="col-xs-6 col-sm-4">
+        <div class="col-xs-6 col-sm-4">    
         </div>
       </div> 
-      <section class="videos">
+      <div class="col-xs-2 col-sm-2">
+        <dir-pagination-controls boundary-links="false" template-url="dirPaginationLeft.tpl.html" pagination-id="DHBW_verbindet"></dir-pagination-controls>
+      </div>
+      <section class="col-xs-8 col-sm-8" class="videos">
         <div class="col-xs-6 col-sm-4" dir-paginate="video in videoList | filter: 'DHBW verbindet' | itemsPerPage: pageSize" current-page="currentPage" pagination-id="DHBW_verbindet">
           <a href ng-click="launch(video.id)">
             <div class="thumbnail">
-              <div class="image-wrapper">
-              <img ng-src="{{video.snippet.thumbnails.medium.url}}"></img> 
+              <img ng-src="{{video.snippet.thumbnails.medium.url}}"></img>
+              <div class="caption">
+                <div class="title"><h6> {{video.snippet.title}} </h6></div>
+                <div class="desc">{{video.snippet.description}}</div>
               </div>
-              <h2> <span>{{video.snippet.title}} </span></h2>
-              <p>{{video.snippet.description}}</p>
             </div>
           </a>  
         </div>
       </section> 
-        <div class="text-center">
-          <dir-pagination-controls boundary-links="false" on-page-change="pageChangeHandler($event)" template-url="dirPagination.tpl.html" pagination-id="DHBW_verbindet"></dir-pagination-controls>
-        </div>
-    </div>
-  </div>
-</div>
-
-    <div ng-controller="FourthController" class="ytVideoGallery">
-      <div class="row">
-        <div class="col-xs-6 col-sm-4">
-          <h3>DHBW Alumni-Portrait</h3>
-        </div>
-        <div class="col-xs-6 col-sm-4">
-          
-        </div>
-        <div class="col-xs-6 col-sm-4">
-        </div>
-      </div> 
-      <section class="videos">
-        <div class="col-xs-6 col-sm-4" dir-paginate="video in videoList | filter: 'DHBW Alumni-Portrait' | itemsPerPage: pageSize" current-page="currentPage" pagination-id="DHBW_Alumni">
-          <a href ng-click="launch(video.id)">
-            <div class="thumbnail">
-              <div class="image-wrapper">
-              <img ng-src="{{video.snippet.thumbnails.medium.url}}"></img> 
-              </div>
-              <h2> <span>{{video.snippet.title}} </span></h2>
-              <p>{{video.snippet.description}}</p>
-            </div>
-          </a>  
-        </div>
-      </section> 
-        <div class="text-center">
-          <dir-pagination-controls boundary-links="false" on-page-change="pageChangeHandler($event)" template-url="dirPagination.tpl.html" pagination-id="DHBW_Alumni"></dir-pagination-controls>
-        </div>
+      <div class="col-xs-2 col-sm-2">
+        <dir-pagination-controls boundary-links="false" template-url="dirPaginationRight.tpl.html" pagination-id="DHBW_verbindet"></dir-pagination-controls>
     </div>
   </div>
 </div>

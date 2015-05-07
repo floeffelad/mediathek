@@ -14,8 +14,8 @@
           width: '960',
           videoId: 'C9b3gO4Fkgg',
           autoplay: 1,
-          theme: 'light',
-          playerVars: {rel: 0},
+
+          playerVars: {rel: 0, showinfo: 0, color: '#e2001a', modestbranding: 0, autohide: 1 },
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
